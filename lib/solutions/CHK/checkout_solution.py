@@ -49,11 +49,11 @@ def checkout(skus):
 
 # print(checkout("FFFFF"))
 
-
-
-
-
-
+def offer(c, item, num, new_price):
+    nums = c // 5
+    offer_a = nums * 200
+    total += offer_a
+    c -= (nums * 5)
 
 
 
