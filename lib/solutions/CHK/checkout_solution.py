@@ -17,6 +17,15 @@ def checkout(skus):
         total += offer_price
         c -= (nums * num)
         return total, c
+    
+    def get_one_free(c, total, item, free_item, num):
+        nums = c // num
+        skus_count[free_item] -= nums
+        skus_count[free_item] = max(skus_count[free_item], 0)
+        offer_price = nums * (pricemap[item] * num)
+        total += offer_price
+        c -= (nums * num)
+        return total, c
 
     total = 0
     for i in skus_count:
@@ -27,16 +36,19 @@ def checkout(skus):
         #     total += offer_a
         #     c -= (nums * 5)
         total, c = offer(c, total, "A", 5, 200)
-        if i == "A" and c >= 3:
-            nums = c // 3
-            offer_a = nums * 130
-            total += offer_a
-            c -= (nums * 3)
-        if i == "B" and c >= 2:
-            nums = c // 2
-            offer_b = nums * 45
-            total += offer_b
-            c -= (nums * 2)  
+        total, c = offer(c, total, "A", 3, 130)
+        total, c = offer(c, total, "B", 2, 45)
+        total, c = offer(c, total, "F", 3, 20)
+        # if i == "A" and c >= 3:
+        #     nums = c // 3
+        #     offer_a = nums * 130
+        #     total += offer_a
+        #     c -= (nums * 3)
+        # if i == "B" and c >= 2:
+        #     nums = c // 2
+        #     offer_b = nums * 45
+        #     total += offer_b
+        #     c -= (nums * 2)  
         if i == "E" and c >= 2:
             nums = c // 2
             skus_count["B"] -= nums
@@ -44,11 +56,11 @@ def checkout(skus):
             offer_e = nums * 80
             total += offer_e
             c -= (nums * 2) 
-        if i == "F" and c >= 3:
-            nums = c // 3
-            offer_f = nums * 20
-            total += offer_f 
-            c -= (nums * 3)    
+        # if i == "F" and c >= 3:
+        #     nums = c // 3
+        #     offer_f = nums * 20
+        #     total += offer_f 
+        #     c -= (nums * 3)    
 
         cost = c * pricemap[i]
         total += cost
@@ -56,6 +68,7 @@ def checkout(skus):
     return total
 
 print(checkout("AAAAAA"))
+
 
 
 
