@@ -34,7 +34,9 @@ def checkout(skus):
         y = skus_count["Y"]
         z = skus_count["Z"]
         sm = s + t + x + y + z
-        if sm > 3:
+        
+        if sm >= 3:
+
             num = sm // 3
             cost = num * 45
             total += cost
@@ -111,13 +113,14 @@ def checkout(skus):
         #     offer_f = nums * 20
         #     total += offer_f 
         #     c -= (nums * 3)    
-        total, c = buy_any(c, total)
+        c, total = buy_any(c, total)
         cost = c * pricemap[i]
         total += cost
     
     return total
 
-print(checkout("A"))
+print(checkout("XYZT"))
+
 
 
 
