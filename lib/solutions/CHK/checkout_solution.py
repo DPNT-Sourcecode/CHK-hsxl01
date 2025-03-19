@@ -3,8 +3,8 @@
 # noinspection PyUnusedLocal
 # skus = unicode string
 def checkout(skus):
-    pricemap = {"A" : 50, "B" : 30, "C" : 20, "D" : 15}
-    skus_count = {"A" : 0, "B" : 0, "C" : 0, "D" : 0}
+    pricemap = {"A" : 50, "B" : 30, "C" : 20, "D" : 15, "E" : 40}
+    skus_count = {"A" : 0, "B" : 0, "C" : 0, "D" : 0, "E" : 0}
 
     for i in skus:
         if i not in skus_count:
@@ -24,12 +24,14 @@ def checkout(skus):
             offer_b = nums * 45
             total += offer_b
             c -= (nums * 2)    
+
         cost = c * pricemap[i]
         total += cost
     
     return total
 
 # print(checkout("CDCD"))
+
 
 
 
