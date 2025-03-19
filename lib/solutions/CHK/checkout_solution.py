@@ -58,7 +58,7 @@ def checkout(skus):
         if i == "R":
             total, c = get_one_free(c, total, "R","Q", 1)
         if i == "U":
-            total, c = offer(c, total, "U", 3, 80)
+            total, c = offer(c, total, "U", 4, 120)
         if i == "V":
             total, c = offer(c, total, "V", 3, 130)
             total, c = offer(c, total, "V", 2, 90)
@@ -93,7 +93,8 @@ def checkout(skus):
     
     return total
 
-# print(checkout("VVVVV"))
+print(checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZ"))
+
 
 
 
