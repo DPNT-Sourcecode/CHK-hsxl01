@@ -14,6 +14,11 @@ def checkout(skus):
     total = 0
     for i in skus_count:
         c = skus_count[i]
+        if i == "A" and c >= 5:
+            nums = c // 5
+            offer_a = nums * 200
+            total += offer_a
+            c -= (nums * 5)
         if i == "A" and c >= 3:
             nums = c // 3
             offer_a = nums * 130
@@ -30,9 +35,7 @@ def checkout(skus):
     
     return total
 
-# print(checkout("CDCD"))
-
-
+print(checkout("AAAAAAAAA"))
 
 
 
