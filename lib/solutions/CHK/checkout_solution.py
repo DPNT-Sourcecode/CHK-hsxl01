@@ -74,7 +74,7 @@ def checkout(skus):
             total, c = offer(c, total, "H", 10, 80)
             total, c = offer(c, total, "H", 5, 45)
         if i == "K":
-            total, c = offer(c, total, "K", 2, 150)
+            total, c = offer(c, total, "K", 2, 120)
         if i == "N":
             total, c = get_one_free(c, total, "N", "M", 3)
         if i == "P":
@@ -121,6 +121,7 @@ def checkout(skus):
     return total
 
 # print(checkout("XYSYZT"))
+
 
 
 
