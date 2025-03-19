@@ -115,18 +115,13 @@ def checkout(skus):
         #     total += offer_f 
         #     c -= (nums * 3)    
         c, total = buy_any(c, total)
+        print(total)
         cost = c * pricemap[i]
         total += cost
     
     return total
 
-# print(checkout("XYSYZT"))
-
-
-
-
-
-
+print(checkout("SSS"))
 
 
 
