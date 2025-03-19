@@ -33,6 +33,22 @@ def checkout(skus):
         x = skus_count["X"]
         y = skus_count["Y"]
         z = skus_count["Z"]
+        sm = s + t + x + y + z
+        if sm > 3:
+            num = sm // 3
+            cost = num * 45
+            total += cost
+            l = ["S", "T", "X" ,"Y" ,"Z"]
+            for i in l:
+                sm -= skus_count[i]
+                if sm < 0:
+                    skus_count[i] -= sm
+                    break
+                skus_count[i] = 0
+        
+        return c, total
+                
+
 
     total = 0
     for i in skus_count:
@@ -69,6 +85,7 @@ def checkout(skus):
         if i == "V":
             total, c = offer(c, total, "V", 3, 130)
             total, c = offer(c, total, "V", 2, 90)
+        
 
         
         # if i == "A" and c >= 3:
@@ -94,13 +111,14 @@ def checkout(skus):
         #     offer_f = nums * 20
         #     total += offer_f 
         #     c -= (nums * 3)    
-
+        total, c = buy_any(c, total)
         cost = c * pricemap[i]
         total += cost
     
     return total
 
-# print(checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZ"))
+print(checkout("A"))
+
 
 
 
