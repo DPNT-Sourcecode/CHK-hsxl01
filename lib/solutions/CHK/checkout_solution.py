@@ -42,6 +42,13 @@ def checkout(skus):
             total, c = offer(c, total, "B", 2, 45)
         if i == "F":
             total, c = offer(c, total, "F", 3, 20)
+        if i == "E":
+            total, c = get_one_free(c, total, "E", "B", 2)
+        if i == "H":
+            total, c = offer(c, total, "H", 10, 80)
+            total, c = offer(c, total, "H", 5, 45)
+        if i == "K":
+            total, c = offer(c, total, "K", 2, 150)
         # if i == "A" and c >= 3:
         #     nums = c // 3
         #     offer_a = nums * 130
@@ -52,13 +59,14 @@ def checkout(skus):
         #     offer_b = nums * 45
         #     total += offer_b
         #     c -= (nums * 2)  
-        if i == "E" and c >= 2:
-            nums = c // 2
-            skus_count["B"] -= nums
-            skus_count["B"] = max(skus_count["B"], 0)
-            offer_e = nums * 80
-            total += offer_e
-            c -= (nums * 2) 
+        # if i == "E" and c >= 2:
+
+            # nums = c // 2
+            # skus_count["B"] -= nums
+            # skus_count["B"] = max(skus_count["B"], 0)
+            # offer_e = nums * 80
+            # total += offer_e
+            # c -= (nums * 2) 
         # if i == "F" and c >= 3:
         #     nums = c // 3
         #     offer_f = nums * 20
@@ -70,7 +78,8 @@ def checkout(skus):
     
     return total
 
-print(checkout("FF"))
+print(checkout("AAAAAAAAAA"))
+
 
 
 
