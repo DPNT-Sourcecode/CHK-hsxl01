@@ -35,10 +35,13 @@ def checkout(skus):
         #     offer_a = nums * 200
         #     total += offer_a
         #     c -= (nums * 5)
-        total, c = offer(c, total, "A", 5, 200)
-        total, c = offer(c, total, "A", 3, 130)
-        total, c = offer(c, total, "B", 2, 45)
-        total, c = offer(c, total, "F", 3, 20)
+        if i == "A":
+            total, c = offer(c, total, "A", 5, 200)
+            total, c = offer(c, total, "A", 3, 130)
+        if i == "B":
+            total, c = offer(c, total, "B", 2, 45)
+        if i == "F":
+            total, c = offer(c, total, "F", 3, 20)
         # if i == "A" and c >= 3:
         #     nums = c // 3
         #     offer_a = nums * 130
@@ -67,7 +70,8 @@ def checkout(skus):
     
     return total
 
-print(checkout("AAAAAA"))
+print(checkout("FF"))
+
 
 
 
