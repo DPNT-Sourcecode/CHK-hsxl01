@@ -41,9 +41,12 @@ def checkout(skus):
             rem = sm % 3
             cost = num * 45
             total += cost
+   
             l = ["Z", "Y", "S" ,"T" ,"X"]
             for i in l:
+                print("hi")
                 sm -= skus_count[i]
+                print(sm)
                 if sm < rem:
                     skus_count[i] -= sm
                     break
@@ -115,13 +118,14 @@ def checkout(skus):
         #     total += offer_f 
         #     c -= (nums * 3)    
         c, total = buy_any(c, total)
-        print(total)
+
         cost = c * pricemap[i]
         total += cost
     
     return total
 
-print(checkout("SSS"))
+print(checkout("SSSZ"))
+
 
 
 
