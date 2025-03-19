@@ -36,13 +36,19 @@ def checkout(skus):
             offer_e = nums * 80
             total += offer_e
             c -= (nums * 2) 
+        if i == "F" and c >= 3:
+            nums = c // 3
+            offer_f = nums * 20
+            total += offer_f 
+            c -= (nums * 3)    
 
         cost = c * pricemap[i]
         total += cost
     
     return total
 
-# print(checkout("EE"))
+# print(checkout("FFFFF"))
+
 
 
 
