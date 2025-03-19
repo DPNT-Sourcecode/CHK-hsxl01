@@ -27,6 +27,13 @@ def checkout(skus):
         c -= (nums * num)
         return total, c
 
+    def buy_any(c, total):
+        s = skus_count["S"]
+        t = skus_count["T"]
+        x = skus_count["X"]
+        y = skus_count["Y"]
+        z = skus_count["Z"]
+
     total = 0
     for i in skus_count:
         c = skus_count[i]
@@ -94,6 +101,7 @@ def checkout(skus):
     return total
 
 # print(checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZ"))
+
 
 
 
