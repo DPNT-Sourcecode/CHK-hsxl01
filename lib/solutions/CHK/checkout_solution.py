@@ -3,7 +3,7 @@
 # noinspection PyUnusedLocal
 # skus = unicode string
 def checkout(skus):
-    pricemap = {"E" : 40, "A" : 50, "B" : 30, "C" : 20, "D" : 15, "F" : 10}
+    pricemap = {"E" : 40, "N" : 40, "R" : 50,"A" : 50, "B" : 30, "C" : 20, "D" : 15, "F" : 10, "G" : 20, "H" : 10, ""}
     skus_count = {"E" : 0, "A" : 0, "B" : 0, "C" : 0, "D" : 0, "F" : 0}
 
     for i in skus:
@@ -57,6 +57,12 @@ def checkout(skus):
             total, c = offer(c, total, "Q", 3, 80)
         if i == "R":
             total, c = get_one_free(c, total, "R","Q", 1)
+        if i == "U":
+            total, c = offer(c, total, "U", 3, 80)
+        if i == "V":
+            total, c = offer(c, total, "V", 3, 130)
+            total, c = offer(c, total, "V", 2, 90)
+
         
         # if i == "A" and c >= 3:
         #     nums = c // 3
@@ -88,6 +94,7 @@ def checkout(skus):
     return total
 
 print(checkout("AAAAAAAAAA"))
+
 
 
 
