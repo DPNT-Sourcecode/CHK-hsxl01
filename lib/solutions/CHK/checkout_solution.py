@@ -41,16 +41,16 @@ def checkout(skus):
             rem = sm % 3
             cost = num * 45
             total += cost
+            sm = sm - rem
    
             l = ["Z", "Y", "S" ,"T" ,"X"]
             for i in l:
-                print("hi")
-                sm -= skus_count[i]
-                print(sm)
-                if sm < rem:
-                    skus_count[i] -= sm
+                if skus_count[i] >= sm:
+                    skus_count[i] - sm
                     break
-                skus_count[i] = 0
+                else:
+                    sm -= skus_count[i]
+                    skus_count[i] = 0
         
         return c, total
                 
@@ -124,7 +124,8 @@ def checkout(skus):
     
     return total
 
-print(checkout("SSSZ"))
+print(checkout("SSS"))
+
 
 
 
