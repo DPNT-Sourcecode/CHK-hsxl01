@@ -32,6 +32,7 @@ def checkout(skus):
         if i == "E" and c >= 2:
             nums = c // 2
             skus_count["B"] -= nums
+            skus_count["B"] = max(skus_count["B"], 0)
             offer_e = nums * 80
             total += offer_e
             c -= (nums * 2) 
@@ -41,7 +42,8 @@ def checkout(skus):
     
     return total
 
-# print(checkout("AEEE"))
+# print(checkout("EEEEEE"))
+
 
 
 
