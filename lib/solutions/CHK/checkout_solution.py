@@ -3,7 +3,7 @@
 # noinspection PyUnusedLocal
 # skus = unicode string
 def checkout(skus):
-    pricemap = {"E" : 40, "N" : 40, "R" : 50,"A" : 50, "B" : 30, "C" : 20, "D" : 15, "F" : 10, "G" : 20, "H" : 10, "I" : 35, "J" : 60, "K" : 80, "L" : 90, "M" : 15, "O" : 10, "P" : 50, "Q": 30, "S" : 20, "T" : 20, "U" : 40, "V" : 50, "W" : 20, "X" : 17, "Y" : 20, "Z" : 21} 
+    pricemap = {"E" : 40, "N" : 40, "R" : 50,"A" : 50, "B" : 30, "C" : 20, "D" : 15, "F" : 10, "G" : 20, "H" : 10, "I" : 35, "J" : 60, "K" : 70, "L" : 90, "M" : 15, "O" : 10, "P" : 50, "Q": 30, "S" : 20, "T" : 20, "U" : 40, "V" : 50, "W" : 20, "X" : 17, "Y" : 20, "Z" : 21} 
     skus_count = {"E" : 0, "N" : 0, "R" : 0, "A" : 0, "B" : 0, "C" : 0, "D" : 0, "F" : 0, "G" : 0, "H" : 0, "I" : 0, "J" : 0, "K" : 0, "L" : 0, "M" : 0, "O" : 0, "P" : 0, "Q": 0, "S" : 0, "T" : 0, "U" : 0, "V" : 0, "W" : 0, "X" : 0, "Y" : 0, "Z" : 0} 
 
     for i in skus:
@@ -121,6 +121,7 @@ def checkout(skus):
     return total
 
 # print(checkout("XYSYZT"))
+
 
 
 
